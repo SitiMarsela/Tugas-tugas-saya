@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Method Objek Array: Array.join()
+    // Method Array .join() berfungsi untuk menggabungkan elemen array menjadi sebuah string.
+    //Sebuah argumen bisa diinputkan kedalam method ini yang akan berfungsi sebagai karakter ’pembatas’ untuk menyatukan array. 
+               var ray1 = [1,2,3,4,5,"a","b","c","d","e"];         
+               console.log(ray1.join("."));      
+               console.log(ray1.join("|"));      
+               console.log(ray1.join("_")); 
+        
+        // Method Objek Array: Array.toString() 
+    // Method toString() berfungsi untuk menkonversi array menjadi string.
+        
+               var ray1 = [1,2,3,4,"a","b","c","d"];
+               console.log(ray1.toString());
+               
+        //    Method Objek Array: Array.sort()
+    // Method Array.sort() digunakan untuk mengurutkan elemen dari array.
+        
+               var ray1 = ["Rijal","Edo","Ilham","Rini","Fina"];
+               ray1.sort()
+               console.log(ray1.toString());         
+          
+               var ray2 = [6,4,2,9,,,1,33,20,47,39,15];
+               ray2.sort()
+               console.log(ray2.toString());                   
+               
+        //    Method Objek Array: Array.concat()
+    // Method Array.concat() berfungsi untuk ”penyambungan” array.
+               var ray1 = [1,2,3,4,"a","b","c","d"];
+               console.log(ray1.toString());         
+          
+               var ray2=ray1.concat(11,22,33,44);
+               console.log(ray2.toString());  
+            
+        // Method Objek Array: Array.slice()
+    // Method Array.slice() digunakan untuk ’memotong’ array menjadi array baru, atau menjadi ’sub-array’ dari array asal.
+        
+               var ray1 = [5,6,7,8,"e","f","g","h"];
+        
+            // slice dari index ke 3 sampai 6
+               var ray2 = ray1.slice(3,6);
+               console.log(ray2.toString());
+            // slince darri index ke 3 dari akhir array
+               var ray3 = ray1.slice(-3)
+               console.log(ray3.toString())
+            
+        // Method Objek Array: Array.splice()
+    // Method splice() adalah method ’serba-bisa’ yang bisa digunakan untuk memotong array, menambahkan elemen array, bahkan melakukan keduanya sekaligus.
+        
+               var ray1 = [5,6,7,8,"e","f","g","h"];
+               console.log(ray1.toString())
+             
+            // splice dari index ke 4
+               var ray2 = ray1.splice(4)
+               console.log(ray1.toString())
+               console.log(ray2.toString())
+        
+               var rayy1 = [1,2,3,4,"a","b","c","d"];
+               console.log(rayy1.toString());    
+          
+            //hapus 3 elemen mulai dari index ke 3
+               var rayy2 = rayy1.splice(3,3)
+               console.log(rayy1.toString());    
+               console.log(rayy2.toString());     
+               
+               var arr1 = [5,6,7,8,"a","b","c","d"];
+               console.log(arr1.toString());    
+            
+            // masukkan elemen "x","y","z"
+            // mulai dari elemen ke 4
+               var arr2 = arr1.splice(4,0,"x","y","z")
+               console.log(arr1.toString());    
+               
+               var ray1 = [1,2,3,4,"a","b","c","d"];
+               console.log(arr1.toString());    
+          
+            // hapus 4 elemen mulai dari elemen ke 4
+            // masukkan elemen "x","y","z" pada posisi penghapusan
+               var ray2 = ray1.splice(3,3,"x","y","z")
+          
+               console.log(ray1.toString());     
+               console.log(ray2.toString());     
+               
+        // Method Objek Array: Array.push()
+    // Method push() akan menambahkan elemen array pada akhir dari array
+          
+               var ray1 = [1,2,3,4]
+               ray1.push(5,6);
+               console.log(ray1.toString())
+        
+        // Method Objek Array: Array.Pop()
+    // Method pop()  akan menghapus elemen terakhir dari array. 
+          
+               var ray1 = [5,6,7,8,9]
+               ray1.pop();
+               console.log(ray1.toString())
+        
+        // Objek Array: Array.unshift()
+    // Method unshift() akan menambahkan elemen baru diawal array, dan menggeser seluruh eleman yang ada.
+               
+               var ray1 = [1,2,3,4]
+               ray1.unshift(5,6)
+               console.log(ray1.toString())
+        
+         // Objek Array : Array.shift()
+    //  Method shift() akan menghapus elemen paling awal array, dan menggeser ke bawah seluruh elemen lain di dalam Array. 
+        
+               var ray1 = [1,2,3,4];
+               ray1.shift()
+               console.log(ray1.toString())
+        
+            
+              
+            </script>
+</body>
+</html>
