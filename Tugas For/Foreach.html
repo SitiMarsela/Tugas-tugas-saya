@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Perulangan Foreach di Javascript
+    //Perulangan foreach biasanya digunakan untuk mencetak item di dalam array.
+    //Perulangan ini termasuk dalam perulangan counted loop, karena jumlah perulangannya akan dituentukan oleh panjang dari array.
+                    
+            var bulan = ["Januari", "Febuari", "Maret", "April", "May", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+                    
+        // dengan menggunakan method foreach
+        bulan.forEach(function(bulan){
+            document.write(bulan + "<br>");
+        });
+                    
+        //Hubungan perulangan For dan Array
+    //hubungan perulangan For dan Array adalah untuk mencetak item didalam array, seperti Foreach.
+                    
+        var hari = ["senin", "selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"]
+                    
+        for(i = 0; i < hari.length; i++){
+            document.write(i+ hari[i] + "<br/>");
+        }
+            </script>
+</body>
+</html>
