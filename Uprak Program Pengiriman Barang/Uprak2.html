@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var pengirim = prompt("Nama Pengirim")
+        var nama = prompt("Nama Penerima")
+        var jarak = prompt("Jarak Pengiriman(KM)")
+        var alamat= prompt("Alamat Penerima")
+        var jenis = prompt("Jenis Barang")
+        var berat = prompt("Berat Barang(KG)")
+    
+        document.write("<b> Nama Pengirim : </b>", pengirim, "<br>")
+        document.write("<b> Nama Penerima : </b>", nama, "<br>")
+        document.write("<b> Jarak Pengiriman : </b>",jarak, "<br>")
+        document.write("<b> alamat Penerima : </b>",alamat, "<br>")
+        document.write("<b> Jenis Barang : </b>",jenis, "<br>")
+        document.write("<b> Berat Barang : </b>",berat, "<br>")
+
+        var biaya_jarak = jarak*10000
+        var biaya_berat = berat*5000
+        var total1 = biaya_jarak+biaya_berat
+
+        document.write("<b>Biaya Pengiriman : </b>",biaya_jarak, "<br>")
+        document.write("<b>Biaya Berat Barang : </b>",biaya_berat, "<br>")
+        document.write("<b>Total Biaya : </b>",total1, "<br>")
+       
+        var discon1
+        if (biaya_jarak >= 50000) {
+            discon1 = biaya_jarak*10/100
+        }else {
+            discon1 = 0
+        }
+         
+        var discon2
+        if (biaya_berat >= 100000) {
+           discon2 = biaya_berat*5/100
+        }else {
+            discon2 = 0
+        }
+        var total2 = discon1 + discon2
+        var total3 = total1 - total2
+
+        document.write("<b>Nilai Discon Jarak : </b>",discon1, "<br>")
+        document.write("<b>Nilai Discon Berat : </b>",discon2, "<br>")
+        document.write("<b>Total Diskon : </b>", total2, "<br>")
+        document.write("<b>Total Pembayaran :</b>", total3, "<br>")
+        
+    </script>
+</body>
+</html>
