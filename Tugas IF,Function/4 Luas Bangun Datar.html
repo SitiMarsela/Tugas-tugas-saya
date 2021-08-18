@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var pilih = prompt(" Ketik Disini : Persegi, Persegi panjang, Segitiga, Lingkaran");
+  
+        function persegi(a,b) {
+        var hasil = s1*s2
+        return hasil
+     }
+        function persegiPanjang(a,b) {
+            var hasil = p*l
+            return hasil
+    }
+        function Segitiga(a,b) {
+            var hasil = constsetengah*a*t
+            return hasil
+    }
+        function lingkaran(a,b) {
+        var hasil = constphi*r*r
+        return hasil  
+     }
+      
+if (pilih === "Persegi") {
+    var s1 = prompt("Masukan Sisi")
+    var s2 = prompt("Masukan Sisi")
+       document.write('Hasil Luas Persegi:',persegi())
+} else if(pilih === "Persegi panjang") {
+    var p = prompt("Masukan panjang")
+    var l = prompt("Masukan lebar")
+       document.write("Hasil Luas Persegi Panjang:", persegiPanjang())
+} else if(pilih === "Segitiga") {
+    constsetengah = 0.5;
+    var a = prompt("Masukan alas")
+    var t = prompt("Masukan tinggi")
+       document.write("Hasil Luas Jajar Segitiga:", Segitiga())
+} else if(pilih === "Lingkaran"){
+    constphi = 3.14;
+    var r = prompt("Masukan Jari-jari")
+       document.write("Hasil Luas Lingkaran:",lingkaran())
+}
+    
+  
+          
+    </script>
+</body>
+</html>
