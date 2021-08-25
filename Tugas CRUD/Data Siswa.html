@@ -148,49 +148,25 @@
 
         function edit(edit) {
             var editnama = prompt("Edit Nama Siswa", namasiswa[edit])
-            if (editnama){
               namasiswa[edit] = editnama
-            }else {
-              namasiswa[edit]
-            }
-            var editttl = prompt("Edit TTL", ttl[edit])
-            if (editttl){
-              ttl[edit] = editttl
-            }else {
-              ttl[edit]
-            }
-            var editjeniskelamin = prompt("Edit Jenis Kelamin", jeniskelamin[edit])
-            if (editjeniskelamin){
-              jeniskelamin[edit] = editjeniskelamin
-            }else {
-              jeniskelamin[edit]
-            }
             
+            var editttl = prompt("Edit TTL", ttl[edit])
+              ttl[edit] = editttl
+            
+            var editjeniskelamin = prompt("Edit Jenis Kelamin", jeniskelamin[edit])
+              jeniskelamin[edit] = editjeniskelamin
+        
             var editkelas = prompt("Edit Kelas", kelas[edit])
-            if (editkelas){
               kelas[edit] = editkelas
-            }else {
-              kelas[edit]
-            }
 
             var editagama = prompt("Edit Agama", agama[edit])
-            if (editagama){
               agama[edit] = editagama
-            }else {
-              agama[edit]
-            }
+           
             var editjurusan = prompt("Edit Jurusan", jurusan[edit])
-            if (editjurusan){
               jurusan[edit] = editjurusan
-            }else {
-              jurusan[edit]
-            }
+            
             var editalamat = prompt("Edit Alamat", alamat[edit])
-            if (editalamat){
               alamat[edit] = editalamat
-            }else {
-              alamat[edit]
-            }
             
             dataData()
         }
