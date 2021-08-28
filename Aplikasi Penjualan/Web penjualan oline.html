@@ -56,7 +56,7 @@
                             <td>Rp. <span id="pajak"></span></td>
                         </tr>
                         <tr class="bg-dark text-white">
-                            <td>Total Bayar</td>
+                            <td>Total Bayar(10%)</td>
                             <td>Rp. <span id="totalbayar"></span></td>
                         </tr>
                     </tbody>
@@ -75,15 +75,13 @@
     <script>
         var namabarang = ['Sepatu Nike Air Force 1 One Full White', 'Sepatu Nike Air Force 1 One Yellow',
             'Sepatu Nike Sneakers Airmax Sport', 'Sepatu Nike Air Jordan ', 'Sepatu Nike Airmax 270 Import',
-            'Nike Air Jordan Indomie'
         ]
-        var hargabarang = [110000, 177000, 150000, 159000, 150000, 3300000]
+        var hargabarang = [110000, 177000, 150000, 200000, 160000]
         var gambarbarang = ['https://cf.shopee.co.id/file/298ff6f22ef399d25e77ec0404850f56',
             'https://s1.bukalapak.com/img/14179870022/large/data.jpeg',
             'https://images.tokopedia.net/img/cache/500-square/VqbcmM/2020/12/4/08a15f47-db96-4321-b990-0140eb5d0b87.jpg.webp',
             'https://media.karousell.com/media/photos/products/2021/2/6/sepatu_nike_air_jordan_sepatu__1612637327_92566a41_progressive.jpg',
             'https://s4.bukalapak.com/img/99392838062/large/Sepatu_Nike_Airmax_270_Import_Sneakers_Sport_Running_Men_Hit.jpg',
-            'https://cdn-brilio-net.akamaized.net/news/2019/06/22/166021/thumbnail-kolaborasi-dengan-indomie-begini-tampilan-sepatu-nike-air-jordan-1-190622e.jpg'
         ]
 
         var listproduk = document.getElementById('listproduk')
@@ -142,12 +140,12 @@
                 hargatotal = hargabarang_keranjang[i] + hargatotal
 
 
-                if (totalbayar > 300000) {
+                if (totalbayar > 400000) {
                     discount = totalbayar * 0.05
                 } else {
                     discount = 0
                 }
-                totalbayar = hargatotal - discount - pajak
+                totalbayar = hargatotal - discount 
 
                 pajak = totalbayar * 0.1
 
