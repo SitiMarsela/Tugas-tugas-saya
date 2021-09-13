@@ -28,18 +28,11 @@
           <input type="text" class="form-control" id="sh_ttl">
       </div>
 
-      <div class="form-group">
-        <label for="jeniskelamin">Jenis Kelamin</label><br>
-        <div class="form-check-inline">
-          <input type="radio" class="form-check-input" name= "radio1" id="sh_jeniskelamin" checked="">
-          <label>Laki-laki</label>
-        </div>
-
-        <div class="form-check-inline">
-          <input type="radio" class="form-check-input" name= "radio1" id="sh_jeniskelamin">
-          <label>Perempuan</label>
-        </div>
-      </div>
+      <label for="jeniskelamin">Jenis Kelamin</label><br>
+        <select class="form-control" id="sh_jeniskelamin">
+          <option value="Laki-laki">Laki-laki</option>
+          <option value="Perempuan">Perempuan</option>
+        </select>
 
 
         <label for="kelas">Kelas</label><br>
@@ -123,7 +116,7 @@
                 "<td>"+jurusan[i]+"</td>"+
                 "<td>"+alamat[i]+"</td>"+
                 "<td>"+
-                    "<button class='btn btn-warning'onclick = 'edit("+i+")''>Edit</button>"+
+                    "<button class='btn btn-warning'onclick = 'edit("+i+")'>Edit</button>"+
                     "<button class='btn btn-danger' onclick = 'hapus("+i+")'>Hapus</button>"+
                 "</td>"+
               "</tr>"
@@ -151,6 +144,7 @@
             alamat.push(alamatnew)
 
             dataData()
+            console.log()
         }
 
         function edit(edit) {

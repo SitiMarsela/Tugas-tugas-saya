@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -24,6 +25,7 @@
             height: 45px;
         }
     </style>
+
 </head>
 
 <body>
@@ -56,13 +58,14 @@
                             <td>Rp. <span id="pajak"></span></td>
                         </tr>
                         <tr class="bg-dark text-white">
-                            <td>Total Bayar(10%)</td>
+                            <td>Total Bayar (10%)</td>
                             <td>Rp. <span id="totalbayar"></span></td>
                         </tr>
                     </tbody>
                 </table>
 
-                <button type="button" class="btn btn-primary mt-3 btn-block">Bayar</button>
+                <a href="Data Pembayar.html"> <button type="button"
+                        class="btn btn-primary mt-3 btn-block">Pay</button></a>
 
             </div>
             <div class="col-8" id='listproduk'>
@@ -97,7 +100,7 @@
                     '<img src="' + gambarbarang[i] + '"class="card-img-top" alt="...">' +
                     '<div class="card-body">' +
                     '<h5 class="card-title">' + namabarang[i] + '</h5>' +
-                    '<p class="card-text">Rp ' + hargabarang[i] + '</p>' +
+                    '<p class="card-text">Rp.' + hargabarang[i] + '</p>' +
                     '<a href="#" class="btn btn-primary" onclick="addlistitem(' + i + ')">Buy</a>' +
                     '</div>' +
                     '</div>'
@@ -145,7 +148,7 @@
                 } else {
                     discount = 0
                 }
-                totalbayar = hargatotal - discount 
+                totalbayar = hargatotal - discount
 
                 pajak = totalbayar * 0.1
 

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+  <title>Registasi User</title>
+
+
+
+</head>
+
+<body>
+
+  <div class="d-flex flex-nowrap bd-highlight">
+    <div class="order-3 p-2 bd-highlight mt-4 mb-4" style="font-weight: 750;">
+      <a href="Books.html"> Kategori Books</a>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-akhWCFHUzyRziNgRinwOPceDHJmrEUUDqKI-u4DQZB5erRdaJL6EJjHZkaEJNf65c1k&usqp=CAU"
+        width="20" height="20">
+    </div>
+    <div class="order-2 p-2 bd-highlight mt-4 mb-4" style="font-weight: 750;">
+      <a href="Home Perpus.html">Home</a>
+      <img src="https://toppng.com/uploads/preview/home-icon-home-house-icon-house-icon-free-11553508857ouiuhg9nsa.png"
+        width="20" height="20">
+    </div>
+    <div class="order-1 p-2 bd-highlight">
+      <img
+        src="https://w7.pngwing.com/pngs/889/420/png-transparent-logo-licentiate-estudio-education-logo-book-leaf-flower-cartoon.png"
+        class="rounded-pill" width="100" height="70">
+    </div>
+  </div>
+  <hr>
+
+  <div class="container">
+
+    <div class="form-group">
+      <label for="nama">Nama Anda</label>
+      <input type="text" class="form-control" id="sh_nama" placeholder="Nama Anda">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" class="form-control" id="sh_email" placeholder="name@gmail.com">
+    </div>
+
+    <label for="jeniskelamin">Kategori Buku</label><br>
+    <select class="form-control" id="sh_kategori">
+      <option value="Buku Fiksi">Buku Fiksi</option>
+      <option value="Buku Non-Fikasi">Buku Non-Fiksi</option>
+    </select>
+
+    <div class="row">
+      <div class="col">
+        <label for="tanggalpeminjaman">Tanggal Peminjaman</label>
+        <input type="date" class="form-control" id="sh_tanggalpeminjaman">
+      </div>
+      
+      <div class="col">
+        <label for="haripeminjaman">Berapa hari Peminjaman</label>
+        <select class="form-control" id="sh_haripeminjaman">
+          <option value="Buku Fiksi">1 Hari</option>
+          <option value="Buku Non-Fikasi">2 Hari</option>
+          <option value="Buku Non-Fikasi">3 Hari</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nohp">No Telephone</label>
+      <input type="number" class="form-control" id="sh_NoHP" placeholder="No Telephone Anda">
+    </div>
+
+
+
+    <button class="btn btn-primary mt-4" onclick="add()">Simpan</button>
+
+
+
+    <table class="table mt-4" style="background-color: coral;">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Nama Anda</th>
+          <th scope="col">Email</th>
+          <th scope="col">Kategori</th>
+          <th scope="col">Tanggal Peminjaman</th>
+          <th scope="col">Hari Pemijaman</th>
+          <th scope="col">No.HP</th>
+        </tr>
+      </thead>
+      <tbody id="tampildata">
+
+      </tbody>
+    </table>
+    <hr>
+    <a href="End.html">
+      <button type="button" class="btn btn-success mt-4">Selesai</button>
+    </a>
+  </div>
+
+
+  <script>
+    var nama = []
+    var email = []
+    var kategori = []
+    var tanggalpeminjaman = []
+    var haripeminjaman = []
+    var noHp = []
+
+
+    var tampil = document.getElementById('tampildata')
+
+    function dataData() {
+      tampil.innerHTML = ""
+
+      for (i = 0; i < nama.length; i++) {
+        var nodata = i + 1
+
+        tampil.innerHTML += "<tr>" +
+          "<th>" + nodata + "</th>" +
+          "<td>" + nama[i] + "</td>" +
+          "<td>" + email[i] + "</td>" +
+          "<td>" + kategori[i] + "</td>" +
+          "<td>" + tanggalpeminjaman[i] + "</td>" +
+          "<td>" + haripeminjaman[i] + "</td>" +
+          "<td>" + noHp[i] + "</td>" +
+
+          "</tr>"
+      }
+    }
+
+    dataData()
+
+    function add() {
+      var namanew = document.getElementById('sh_nama').value
+      var emailnew = document.getElementById('sh_email').value
+      var kategorinew = document.getElementById('sh_kategori').value
+      var tanggalpeminjamannew = document.getElementById('sh_tanggalpeminjaman').value
+      var haripeminjamannew = document.getElementById('sh_haripeminjaman').value
+      var noHpnew = document.getElementById('sh_NoHP').value
+
+
+
+      nama.push(namanew)
+      email.push(emailnew)
+      kategori.push(kategorinew)
+      tanggalpeminjaman.push(tanggalpeminjamannew)
+      haripeminjaman.push(haripeminjamannew)
+      noHp.push(noHpnew)
+
+
+      dataData()
+
+      console.log()
+    }
+  </script>
+
+
+
+
+
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+  </script>
+
+
+</body>
+
+</html>

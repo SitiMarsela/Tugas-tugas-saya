@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Buku Non-Fiksi</title>
+
+    <style>
+        .judulbuku {
+            height: 45px;
+            font-weight: bold;
+            font-family: inherit;
+        }
+
+        .judullist {
+            height: 45px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="d-flex flex-nowrap bd-highlight">
+        <div class="order-3 p-2 bd-highlight mt-4 mb-4" style="font-weight: 750;">
+            <a href="Books.html"> Kategori Books</a>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-akhWCFHUzyRziNgRinwOPceDHJmrEUUDqKI-u4DQZB5erRdaJL6EJjHZkaEJNf65c1k&usqp=CAU"
+                width="20" height="20">
+        </div>
+        <div class="order-2 p-2 bd-highlight mt-4 mb-4" style="font-weight: 750;">
+            <a href="Home Perpus.html">Home</a>
+            <img src="https://toppng.com/uploads/preview/home-icon-home-house-icon-house-icon-free-11553508857ouiuhg9nsa.png"
+                width="20" height="20">
+        </div>
+        <div class="order-1 p-2 bd-highlight">
+            <img src="https://w7.pngwing.com/pngs/889/420/png-transparent-logo-licentiate-estudio-education-logo-book-leaf-flower-cartoon.png"
+                class="rounded-pill" width="100" height="70">
+        </div>
+    </div>
+    <hr>
+
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" style="height: 450px; background-position-x: -500px;">
+            <div class="carousel-item active">
+                <img src="https://images.pexels.com/photos/4861363/pexels-photo-4861363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.pexels.com/photos/1329571/pexels-photo-1329571.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.pexels.com/photos/2765617/pexels-photo-2765617.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <div class="judulbuku bg-secondary rounded text-white text-center pt-2 mt-3 mb-3 ">Rak Buku</div>
+
+                <div class="listkbuku" id="listbuku"></div>
+            </div>
+
+            <div class="col-4">
+                <div class="judullist bg-dark rounded text-white text-center pt-2 mt-3">List Buku</div>
+
+                <div class="listkeranjang" id="listkeranjang">
+
+                </div>
+                <a href="Data User.html"> <button type="button"
+                        class="btn btn-primary mt-3 mb-3 btn-block">Registasi</button></a>
+            </div>
+
+            <script>
+                var namabuku = ['Untuk Negeriku', 'Filosofi Teras', 'Tuhan Ada di Hatimu',
+                    'SEGALA-GALANYA AMBYAR', 'The Pemprogram Pragmatis', 'Sebuah Seni Untuk Bersikap Bodo Amat'
+                ]
+                var penulisbuku = ['Mohammad Hatta', 'Henry Manampiring',
+                    'Husein Ja`far al-Hadar', 'Mark Manson', 'M.Taufik', 'Mark Manson'
+                ]
+
+                var gambarbuku = [
+                    'https://mustakim.org/wp-content/uploads/2020/10/8-Ciri-Buku-Nonfiksi-Contoh-dan-Penjelasannya-Lengkap.png',
+                    'https://id-test-11.slatic.net/p/697898215adbed06e86d05553a52bf95.png',
+                    'https://cf.shopee.co.id/file/176a9f9a62e0d31920ae84cee7760dba',
+                    'https://nasutionbooks.com/wp-content/uploads/2020/03/segala-galanya-ambyar.jpg',
+                    'https://www.jagoanhosting.com/blog/wp-content/uploads/2019/11/The-Pragmatic-Programmer-Book.jpg',
+                    'https://upload.wikimedia.org/wikipedia/commons/4/4b/Sebuah-seni-untuk-bersikap-bodoh-amat.jpg',
+                ]
+
+                var listbuku = document.getElementById('listbuku')
+                var listkeranjang = document.getElementById('listkeranjang')
+
+                var namabuku_keranjang = []
+                var penulisbuku_keranjang = []
+                var gambarbuku_keranjang = []
+
+
+                function showlistproduk() {
+                    listbuku.innerHTML = ''
+                    for (let i = 0; i < namabuku.length; i++) {
+                        listbuku.innerHTML += '<div class="card float-left mr-3 mb-3" style="width: 8rem;">' +
+                            '<img src="' + gambarbuku[i] + '"class="card-img-top" alt="...">' +
+                            '<div class="card-body">' +
+                            '<h5 class="card-title">' + namabuku[i] + '</h5>' +
+                            '<p class="card-text">' + penulisbuku[i] + '</p>' +
+                            '<a href="#" class="btn btn-primary" onclick="addlistbuku(' + i + ')">Pinjam</a>' +
+                            '</div>' +
+                            '</div>'
+                    }
+                }
+
+                function addlistbuku(id) {
+                    namabuku_keranjang.push(namabuku[id])
+                    penulisbuku_keranjang.push(penulisbuku[id])
+                    gambarbuku_keranjang.push(gambarbuku[id])
+
+                    showlistkeranjang()
+
+
+
+                }
+
+                var listkeranjang = document.getElementById('listkeranjang')
+
+
+                function showlistkeranjang() {
+                    listkeranjang.innerHTML = ''
+
+
+                    for (let i = 0; i < namabuku_keranjang.length; i++) {
+                        listkeranjang.innerHTML +=
+                            '<div class="card mr-3 mb-3 mt-3 float-left" style="width: 8rem; ">' +
+                            '<img src="' + gambarbuku_keranjang[i] + '"class="card-img-top" alt="...">' +
+                            '<div class="card-body">' +
+                            '<h5 class="card-title">' + namabuku_keranjang[i] + '</h5>' +
+                            '<p class="card-text"> ' + penulisbuku_keranjang[i] + '</p>' +
+                            '<p>Pilihan : 1</p>' +
+                            '<a href="#" class="btn btn-danger float-right" Onclick="deleteitem(' + i +
+                            ')">Cancel</a>' +
+                            '</div>' +
+                            '</div>'
+
+
+                    }
+                }
+
+                showlistproduk()
+
+                function deleteitem(id) {
+                    namabuku_keranjang.splice(id, 1)
+                    penulisbuku_keranjang.splice(id, 1)
+                    gambarbuku_keranjang.splice(id, 1)
+
+                    showlistkeranjang()
+                }
+            </script>
+
+
+
+
+
+            <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous">
+            </script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+                crossorigin="anonymous">
+            </script>
+
+
+
+</body>
+
+</html>
